@@ -24,12 +24,14 @@ const BookList = props => {
       { !bookData ? 'loading...'
         : bookData.data.items.map((item, index) => {
           const title = item.volumeInfo.title
-          const imgUrl = item.volumeInfo.imageLinks?.thumbnail
+          const imgUrl = item.volumeInfo.imageLinks?.thumbnail || 'https://dummyimage.com/128x181/b5b5b5/ffffff&text=No+Image'
+          const url = item.volumeInfo.infoLink
           return (
             <Grid container item xs={12} key={index}>
               <BookListCard
                 title={title}
                 imgUrl={imgUrl}
+                url={url}
               />
             </Grid>
           )
