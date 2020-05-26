@@ -1,7 +1,11 @@
 // App.jsx
 import React from 'react'
 import BookList from './components/BookList'
+import BookSearch from './components/BookSearch'
+import Header from './components/Header'
+import HeaderOffset from './components/HeaderOffset'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { Toolbar } from '@material-ui/core'
 import axios from 'axios'	// 追加
 
 const getDataFromAPI = async keyword => {
@@ -15,12 +19,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <h1>react app</h1>
-        <ul>
-          <li><Link to='/'>React</Link></li>
-          <li><Link to='/vue'>Vue</Link></li>
-          <li><Link to='/angular'>Angular</Link></li>
-        </ul>
+        <Header position="fixed" />
+        <HeaderOffset />
+        <BookSearch />
         <hr/>
         <Route
           exact
