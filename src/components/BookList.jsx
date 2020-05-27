@@ -22,8 +22,8 @@ const BookList = props => {
 
   return (
     <Grid container spacing={1}>
-      { !bookData ? <Loading />
-        : bookData.data.items.map((item, index) => {
+      { !bookData ? <Loading /> :
+          bookData.data.totalItems && bookData.data.items.map((item, index) => {
           const title = item.volumeInfo.title
           const imgUrl = item.volumeInfo.imageLinks?.thumbnail || 'https://dummyimage.com/128x181/b5b5b5/ffffff&text=No+Image'
           const url = item.volumeInfo.infoLink

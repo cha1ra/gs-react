@@ -1,7 +1,6 @@
 // App.jsx
 import React from 'react'
 import Search from './pages/Search'
-import BookList from './components/BookList'
 import Header from './components/base/Header'
 import HeaderOffset from './components/base/HeaderOffset'
 import Container from '@material-ui/core/Container'
