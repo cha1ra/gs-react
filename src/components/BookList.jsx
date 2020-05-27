@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Grid } from '@material-ui/core'
 import BookListCard from './BookListCard'
+import Loading from './Loading'
 
 const BookList = props => {
   // useStateの戻り値は [value, updateFunc]
@@ -21,7 +22,7 @@ const BookList = props => {
 
   return (
     <Grid container spacing={1}>
-      { !bookData ? 'loading...'
+      { !bookData ? <Loading />
         : bookData.data.items.map((item, index) => {
           const title = item.volumeInfo.title
           const imgUrl = item.volumeInfo.imageLinks?.thumbnail || 'https://dummyimage.com/128x181/b5b5b5/ffffff&text=No+Image'
